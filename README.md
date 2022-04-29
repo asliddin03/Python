@@ -15,7 +15,8 @@ __Запуск игры:__
     git clone https://github.com/asliddin03/Python.git
 Установите нужные библиотеки
 ***
-    pip install -r requirments.txt
+    pip install -r requirements.txt
 Запуск
 ***
+    cd console_text_editor.py
     python3 console_text_editor.py
