@@ -1,22 +1,29 @@
+# подключаем библиотека tkinter
 import tkinter
+# импортируем файл global_variable как variable
+import global_variable as variable
 from tkinter import *
 from click import command
-import global_variable as variable
+# импортируем файл function и из него функции New, Open, Save, Save_As, Info, on_closing
 from function import New, Open, Save, Save_As, Info, on_closing
 
+# подклучаем Scrollbar, будет иметь вертикальную ориентацию и привязан текстовым полям 
 sc = Scrollbar(variable.kor, orient=VERTICAL, command=variable.text.yview)
 sc.pack(side="right", fill="y")
 variable.text.configure(yscrollcommand=sc.set)
 
 variable.text.pack()
 
+#Заголовок экрана
 variable.kor.title("Text Editor") 
 
+#размер экрана
 variable.kor.geometry('600x550')
 
 menust = tkinter.Menu(variable.kor)
 m = tkinter.Menu(menust)
 
+# нашим кнопкам привяжем действия, при нажатии каждую из них направляем на соответствующую функцию
 m.add_command(label = "New File" ,command=New)
 m.add_command(label = "Open File", command=Open)
 m.add_command(label = "Save", command=Save)
@@ -29,6 +36,7 @@ menust.add_command(label = "Exit", command=on_closing)
 
 variable.kor.config(menu=menust)
 
+# с помощью клавиши исполняем соответствующие команды
 variable.kor.bind('<Control-s>', Save)
 variable.kor.bind('<Control-S>', Save)
 variable.kor.bind('<Control-Shift-s>', Save_As)
