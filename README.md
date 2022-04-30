@@ -13,7 +13,7 @@ __Установка пакетов:__
 Нужные команды для установки необходимых покетов
 ***
     git clone https://github.com/asliddin03/Python.git
-    cd console_text_editor.py
+    cd console_text_editor
     pip install -r requirements.txt
 Установка питон и допонительного пакета
 ***
