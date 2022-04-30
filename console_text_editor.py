@@ -4,35 +4,34 @@ import tkinter
 import global_variable as variable
 from tkinter import *
 from click import command
-# импортируем файл function и из него функции New, Open, Save, Save_As, Info, on_closing
-from function import New, Open, Save, Save_As, Info, on_closing
-
-# подклучаем Scrollbar, будет иметь вертикальную ориентацию и привязан текстовым полям 
+# импортируем файл function и из него функции New, Open, Save, Save_As, Info, on_closing, find, replace
+from function import New, Open, Save, Save_As, Info, on_closing, find, replace
+# подклучаем Scrollbar, будет иметь вертикальную ориентацию и привязан текстовым полям
 sc = Scrollbar(variable.kor, orient=VERTICAL, command=variable.text.yview)
 sc.pack(side="right", fill="y")
 variable.text.configure(yscrollcommand=sc.set)
 
 variable.text.pack()
 
-#Заголовок экрана
-variable.kor.title("Text Editor") 
+# Заголовок экрана
+variable.kor.title("Text Editor")
 
-#размер экрана
+# размер экрана
 variable.kor.geometry('600x550')
 
 menust = tkinter.Menu(variable.kor)
 m = tkinter.Menu(menust)
 
 # нашим кнопкам привяжем действия, при нажатии каждую из них направляем на соответствующую функцию
-m.add_command(label = "New File" ,command=New)
-m.add_command(label = "Open File", command=Open)
-m.add_command(label = "Save", command=Save)
-m.add_command(label = "Save As...", command=Save_As)
+m.add_command(label="New File", command=New)
+m.add_command(label="Open File", command=Open)
+m.add_command(label="Save", command=Save)
+m.add_command(label="Save As...", command=Save_As)
 
-menust.add_cascade(label ="File",underline=0, menu=m)
+menust.add_cascade(label="File", underline=0, menu=m)
 
-menust.add_command(label = "Info", command=Info)
-menust.add_command(label = "Exit", command=on_closing)
+menust.add_command(label="Info", command=Info)
+menust.add_command(label="Exit", command=on_closing)
 
 variable.kor.config(menu=menust)
 
@@ -46,4 +45,9 @@ variable.kor.bind('<Control-O>', Open)
 
 variable.kor.protocol("WM_DELETE_WINDOW", on_closing)
 
+variable._find.config(command=find)
+variable.repl.config(command=replace)
+
+# функция # mainloop вызывает бесконечный цикл окна, так что окно будет
+# дождитесь любого взаимодействия с пользователем, пока мы закрой его
 variable.kor.mainloop()
