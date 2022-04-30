@@ -1,12 +1,9 @@
-# подключаем библиотека tkinter
+
 import tkinter
-# импортируем файл global_variable как variable
 import global_variable as variable
 from tkinter import *
-from click import command
-# импортируем файл function и из него функции New, Open, Save, Save_As, Info, on_closing, find, replace
-from function import New, Open, Save, Save_As, Info, on_closing, find, replace
-# подклучаем Scrollbar, будет иметь вертикальную ориентацию и привязан текстовым полям
+from click import command 
+from function import New, Open, Save, Save_As, Info, on_closing, find, replace 
 sc = Scrollbar(variable.kor, orient=VERTICAL, command=variable.text.yview)
 sc.pack(side="right", fill="y")
 variable.text.configure(yscrollcommand=sc.set)

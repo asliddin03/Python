@@ -9,14 +9,17 @@ ___
 - function.py
 - global_variable.py
 
-__Запуск игры:__
-Сначала клонируйте репозиторий
+__Установка пакетов:__
+Нужные команды для установки необходимых покетов
 ***
     git clone https://github.com/asliddin03/Python.git
-Установите нужные библиотеки
-***
-    pip install -r requirements.txt
-Запуск
-***
     cd console_text_editor.py
+    pip install -r requirements.txt
+Установка питон и допонительного пакета
+***
+    sudo upt update
+    sudo upt install python 3.7
+__Запуск:__
+***
+    cd src
     python3 console_text_editor.py

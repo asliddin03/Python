@@ -18,14 +18,36 @@ f = False
 
 
 def New():
+    """
+
+    функция для создания нового файла
+
+    Параметры
+    ---
+
+    Возвращаемые значении 
+    ---
+
+    """
+
     global name
     name = "Untitled"
     variable.text.delete('1.0', tkinter.END)
 
-# функция для открытия файла
-
 
 def Open(*args):
+    """
+
+    функция для открытия файла
+
+    Параметры
+    *args
+
+    Возвращаемые значении 
+    ---
+
+    """
+
     global name
     global f
     p = askopenfile(mode="r")
@@ -37,10 +59,20 @@ def Open(*args):
     variable.text.insert('1.0', t)
     f = True
 
-# функция для сохранения файла
-
 
 def Save(*args):
+    """
+
+    функция для сохранения файла
+
+    Параметры
+    *args
+
+    Возвращаемые значении 
+    ---
+
+    """
+
     global f
     if (f == False):
         Save_As()
@@ -51,10 +83,20 @@ def Save(*args):
         t.close()
     f = True
 
-# функция для сохранения файла с возможноси выбора место и имени
-
 
 def Save_As(*args):
+    """
+
+    функция для сохранения файла с возможноси выбора место и имени
+
+    Параметры
+    *args
+
+    Возвращаемые значении 
+    ---
+
+    """
+
     global file_name
     t = asksaveasfile(mode='w', defaultextension='.txt')
     s = variable.text.get('1.0', tkinter.END)
@@ -65,16 +107,36 @@ def Save_As(*args):
     else:
         file_name = t.name
 
-# функция для открытия информоционного окна с описанием нашей программы
-
 
 def Info():
-    messagebox.showinfo("About Text Editor", "Console text editor")
+    """
 
-# функция для закрытия программы
+    функция для открытия информоционного окна с описанием нашей программы
+
+    Параметры
+    ---
+
+    Возвращаемые значении 
+    ---
+
+    """
+
+    messagebox.showinfo("About Text Editor", "Console text editor")
 
 
 def on_closing():
+    """
+
+    функция для закрытия программы
+
+    Параметры
+    ---
+
+    Возвращаемые значении 
+    ---
+
+    """
+
     if messagebox.askyesnocancel("Save changes to documens before closing", "If you don't save, changes will be lose"):
         if not f:
             print(f)
@@ -85,10 +147,20 @@ def on_closing():
         if messagebox.askokcancel("Quit", "Do you want to quit?"):
             variable.kor.destroy()
 
-# функция для поиска строки в тексте
-
 
 def find():
+    """
+
+    функция для поиска строки в тексте
+
+    Параметры
+    ---
+
+    Возвращаемые значении 
+    ---
+
+    """
+
     # удалить тег "found" из индекса 1 в END
     variable.text.tag_remove('found', '1.0', END)
 
@@ -101,7 +173,7 @@ def find():
                                      stopindex=END)
             if not i:
                 break
-            
+
             lasti = '%s+%dc' % (i, len(st))
             variable.text.tag_add('found', i, lasti)
             i = lasti
@@ -109,10 +181,20 @@ def find():
         variable.text.tag_config('found', foreground='red')
     variable.edit1.focus_set()
 
-# функция для замены строки в тексте
-
 
 def replace():
+    """
+
+    функция для замены строки в тексте
+
+    Параметры
+    ---
+
+    Возвращаемые значении 
+    ---
+
+    """
+
     # удалить тег "found" из индекса 1 в END
     variable.text.tag_remove('found', '1.0', END)
 
