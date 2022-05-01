@@ -164,17 +164,17 @@ def find():
     # удалить тег "found" из индекса 1 в END
     variable.text.tag_remove('found', '1.0', END)
 
-    st = variable.edit1.get()
+    find_text = variable.edit1.get()
 
-    if st:
+    if find_text:
         i = '1.0'
         while True:
-            i = variable.text.search(st, i, nocase=1,
+            i = variable.text.search(find_text, i, nocase=1,
                                      stopindex=END)
             if not i:
                 break
 
-            lasti = '%s+%dc' % (i, len(st))
+            lasti = '%s+%dc' % (i, len(find_text))
             variable.text.tag_add('found', i, lasti)
             i = lasti
         # отметят расположенную строку красным цветом
@@ -199,28 +199,28 @@ def replace():
     variable.text.tag_remove('found', '1.0', END)
 
     # возврат к виджету
-    st1 = variable.edit1.get()
-    st2 = variable.edit2.get()
+    find_text = variable.edit1.get()
+    replace_text = variable.edit2.get()
 
-    if (st1 and st2):
-        i = '1.0'
+    if (find_text and replace_text):
+        idx = '1.0'
         while True:
             # выполняет поиск нужной строки из индекса 1
-            i = variable.text.search(st1, i, nocase=1,
+            idx = variable.text.search(find_text, idx, nocase=1,
                                      stopindex=END)
-            print(i)
-            if not i:
+            print(idx)
+            if not idx:
                 break
 
-            lasti = '% s+% dc' % (i, len(st1))
+            lastidx = '% s+% dc' % (idx, len(find_text))
 
-            variable.text.delete(i, lasti)
-            variable.text.insert(i, st2)
+            variable.text.delete(idx, lastidx)
+            variable.text.insert(idx, replace_text)
 
-            lasti = '% s+% dc' % (i, len(st2))
+            lasti = '% s+% dc' % (idx, len(replace_text))
 
-            variable.text.tag_add('found', i, lasti)
-            i = lasti
+            variable.text.tag_add('found', idx, lastidx)
+            idx = lastidx
 
         # отметят расположенную строку зелёным цветом
         variable.text.tag_config(

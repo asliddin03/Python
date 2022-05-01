@@ -9,26 +9,23 @@ ___
 - function.py
 - global_variable.py
  
-__Создайте новую папку__
-***
-    mkdir "название папки"
-__Переходите в созданную папку__
-***
-    cd "название папки"
-__Нужные команды для клонирование репозитории__
+__Нужные команды для клонирование репозитории и установки необходимых фавлов__
 ***
     git clone -b dev https://github.com/asliddin03/Python.git
-__Переходите папку Python__
-***
     cd Python
+    pip install -r requirements.txt
+__Переходите папку src__
+***
+    
 
 __Установка питон и допонительного пакета__
 ***
     sudo apt update
     sudo apt install python3.7
-__Переходите в папку Python__
+    sudo apt install -y python3-pip
+__Переходите в папку src__
 ***
-    cd Python
+    cd src
 __Запуск:__
 ***
     python3 console_text_editor.py
