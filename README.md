@@ -8,18 +8,20 @@ ___
 - console_text_editor.py)(главный файл)
 - function.py
 - global_variable.py
-
-__Установка пакетов:__
-Нужные команды для установки необходимых покетов
+ 
+__Создайте новую папку__
 ***
-    git clone https://github.com/asliddin03/Python.git
-    cd console_text_editor
-    pip install -r requirements.txt
-Установка питон и допонительного пакета
+    mkdir "название папки"
+__Переходите в созданную папку__
+***
+    cd "название папки"
+__Нужные команды для клонирование репозитории__
+***
+    git clone -b dev https://github.com/asliddin03/Python.git
+__Установка питон и допонительного пакета__
 ***
     sudo upt update
-    sudo upt install python 3.7
+    sudo upt install python3.7
 __Запуск:__
 ***
-    cd src
     python3 console_text_editor.py
