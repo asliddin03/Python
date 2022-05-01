@@ -15,13 +15,20 @@ __Создайте новую папку__
 __Переходите в созданную папку__
 ***
     cd "название папки"
+__Нужные команды для клонирование репозитории__
+***
+    git clone -b dev https://github.com/asliddin03/Python.git
+__Переходите папку Python__
+***
+    cd Python
+
 __Установка питон и допонительного пакета__
 ***
     sudo apt update
     sudo apt install python3.7
-__Нужные команды для клонирование репозитории__
+__Переходите в папку Python__
 ***
-    git clone -b dev https://github.com/asliddin03/Python.git
+    cd Python
 __Запуск:__
 ***
     python3 console_text_editor.py
