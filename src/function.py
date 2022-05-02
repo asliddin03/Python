@@ -1,6 +1,6 @@
 # подключаем библиотека tkinter
 import tkinter
-from tkinter import *
+import tkinter as tk 
 # из библиотеки tkinter.filedialog импортируем модули asksaveasfile, askopenfile
 from tkinter.filedialog import asksaveasfile, askopenfile
 from tkinter import messagebox
@@ -162,7 +162,7 @@ def find():
     """
 
     # удалить тег "found" из индекса 1 в END
-    variable.text.tag_remove('found', '1.0', END)
+    variable.text.tag_remove('found', '1.0', tk.END)
 
     find_text = variable.edit1.get()
 
@@ -170,7 +170,7 @@ def find():
         i = '1.0'
         while True:
             i = variable.text.search(find_text, i, nocase=1,
-                                     stopindex=END)
+                                     stopindex=tk.END)
             if not i:
                 break
 
@@ -196,7 +196,7 @@ def replace():
     """
 
     # удалить тег "found" из индекса 1 в END
-    variable.text.tag_remove('found', '1.0', END)
+    variable.text.tag_remove('found', '1.0', tk.END)
 
     # возврат к виджету
     find_text = variable.edit1.get()
@@ -207,7 +207,7 @@ def replace():
         while True:
             # выполняет поиск нужной строки из индекса 1
             idx = variable.text.search(find_text, idx, nocase=1,
-                                     stopindex=END)
+                                     stopindex=tk.END)
             print(idx)
             if not idx:
                 break

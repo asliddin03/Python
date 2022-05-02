@@ -1,10 +1,9 @@
-
 import tkinter
+import tkinter as tk
 import global_variable as variable
-from tkinter import *
-from click import command 
-from function import New, Open, Save, Save_As, Info, on_closing, find, replace 
-sc = Scrollbar(variable.kor, orient=VERTICAL, command=variable.text.yview)
+from click import command
+from function import New, Open, Save, Save_As, Info, on_closing, find, replace
+sc = tk.Scrollbar(variable.kor, orient=tk.VERTICAL, command=variable.text.yview)
 sc.pack(side="right", fill="y")
 variable.text.configure(yscrollcommand=sc.set)
 
