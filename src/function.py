@@ -1,5 +1,4 @@
 # подключаем библиотека tkinter
-import tkinter
 import tkinter as tk 
 # из библиотеки tkinter.filedialog импортируем модули asksaveasfile, askopenfile
 from tkinter.filedialog import asksaveasfile, askopenfile
@@ -10,7 +9,7 @@ from tkinter.messagebox import showerror
 import global_variable as variable
 
 # глобальные перемены
-name = tkinter.NONE
+name = tk.NONE
 file_name = ''
 f = False
 
@@ -32,7 +31,7 @@ def New():
 
     global name
     name = "Untitled"
-    variable.text.delete('1.0', tkinter.END)
+    variable.text.delete('1.0', tk.END)
 
 
 def Open(*args):
@@ -55,7 +54,7 @@ def Open(*args):
         return
     name = p.name
     t = p.read()
-    variable.text.delete('1.0', tkinter.END)
+    variable.text.delete('1.0', tk.END)
     variable.text.insert('1.0', t)
     f = True
 
@@ -77,7 +76,7 @@ def Save(*args):
     if (f == False):
         Save_As()
     else:
-        s = variable.text.get('1.0', tkinter.END)
+        s = variable.text.get('1.0', tk.END)
         t = open(file_name, 'w')
         t.write(s)
         t.close()
@@ -99,7 +98,7 @@ def Save_As(*args):
 
     global file_name
     t = asksaveasfile(mode='w', defaultextension='.txt')
-    s = variable.text.get('1.0', tkinter.END)
+    s = variable.text.get('1.0', tk.END)
     try:
         t.write(s.rstrip())
     except Exception:

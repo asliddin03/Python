@@ -1,4 +1,3 @@
-import tkinter
 import tkinter as tk
 import global_variable as variable
 from click import command
@@ -15,8 +14,8 @@ variable.kor.title("Text Editor")
 # размер экрана
 variable.kor.geometry('600x550')
 
-menust = tkinter.Menu(variable.kor)
-m = tkinter.Menu(menust)
+menust = tk.Menu(variable.kor)
+m = tk.Menu(menust)
 
 # нашим кнопкам привяжем действия, при нажатии каждую из них направляем на соответствующую функцию
 m.add_command(label="New File", command=New)
